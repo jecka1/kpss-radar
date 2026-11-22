@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: kpss-radar
+    runtime: docker
+    region: frankfurt
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: KPSS_DB_PATH
+        value: /tmp/kpss_radar.db
